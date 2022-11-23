@@ -1,18 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../../../assets/images/logo.png";
 
 const Header = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 p-5">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <Link to="/home" className="btn btn-ghost normal-case text-xl">
+          <img src={logo} alt="Logo" style={{ width: "100px" }} />
+        </Link>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal p-0">
           <li>
-            <a>Home</a>
+            <Link to="/home">Home</Link>
           </li>
           <li tabIndex={0}>
-            <a>
+            <Link>
               Categories
               <svg
                 className="fill-current"
@@ -23,21 +27,24 @@ const Header = () => {
               >
                 <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
               </svg>
-            </a>
+            </Link>
             <ul className="p-2 bg-base-100">
               <li>
-                <a>Sedan</a>
+                <Link to="/sedan">Sedan</Link>
               </li>
               <li>
-                <a>7 Seater</a>
+                <Link to="/7seater">7 Seater</Link>
               </li>
               <li>
-                <a>Microbus</a>
+                <Link to="/microbus">Microbus</Link>
               </li>
             </ul>
           </li>
           <li>
-            <a>Login</a>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </div>

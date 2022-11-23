@@ -12,13 +12,13 @@ const Banner = () => {
         <div className="max-w-md">
           <h1 className="mb-5 text-5xl font-bold">
             Welcome to <br />
-            Car Bazar!
+            Car Bazar.
           </h1>
           <p className="mb-5">
             The biggest reconditioned car market in the country. See ,Meet and
             Buy cars from here. Have a car have fun !
           </p>
-          <button className="btn btn-outline">See Cars</button>
+          <button className="btn btn-primary">See Cars</button>
         </div>
       </div>
     </div>
