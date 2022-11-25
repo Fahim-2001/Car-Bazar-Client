@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import BookingModal from "../BookingModal/BookingModal";
 
 const SingleCategoryInfo = ({ category }) => {
   console.log(category);
@@ -49,7 +49,10 @@ const SingleCategoryInfo = ({ category }) => {
           <span className=" font-medium">Posted On:</span> {category.posted_on}
         </p>
       </div>
-      <Link className="btn btn-primary my-10">Book Now</Link>
+      <label htmlFor="my-modal-3" className="btn btn-primary my-10">
+        Book Now
+      </label>
+      {/* <BookingModal></BookingModal> */}
     </div>
   );
 };

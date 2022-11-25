@@ -4,7 +4,7 @@ import SingleCategoryInfo from "../SingleCategoryInfo/SingleCategoryInfo";
 
 const SingleCategory = () => {
   const singleCategory = useLoaderData();
-
+  console.log(singleCategory);
   return (
     <div>
       <h1>Single Category</h1>
