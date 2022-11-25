@@ -1,11 +1,10 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const CarDetails = () => {
   const carDetails = useLoaderData();
 
   const {
-    _id,
     category,
     picture,
     model,
@@ -64,6 +63,7 @@ const CarDetails = () => {
           </p>
         </div>
       </div>
+      <Link className="btn btn-primary mb-20">Book Now</Link>
     </div>
   );
 };

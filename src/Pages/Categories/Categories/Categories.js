@@ -1,7 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Categories = () => {
+  const navigate = useNavigate();
+  const handleOneCategory = (id) => {
+    navigate(`/category/${id}`);
+  };
   return (
     <div className="text-center">
       <h1 className="text-primary text-4xl font-bold my-20">
@@ -17,9 +21,13 @@ const Categories = () => {
           </figure>
           <div className="card-body flex place-content-between">
             <h2 className="card-title">Sedan</h2>
-
             <div className="card-actions justify-end ">
-              <button className="btn btn-primary">See Cars</button>
+              <button
+                className="btn btn-primary"
+                onClick={() => handleOneCategory("101")}
+              >
+                See Cars
+              </button>
             </div>
           </div>
         </div>
@@ -33,7 +41,12 @@ const Categories = () => {
           <div className="card-body flex place-content-between">
             <h2 className="card-title">SUV</h2>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">See Cars</button>
+              <button
+                className="btn btn-primary"
+                onClick={() => handleOneCategory("102")}
+              >
+                See Cars
+              </button>
             </div>
           </div>
         </div>
@@ -48,7 +61,12 @@ const Categories = () => {
             <h2 className="card-title">Microbus</h2>
 
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">See Cars</button>
+              <button
+                className="btn btn-primary"
+                onClick={() => handleOneCategory("103")}
+              >
+                See Cars
+              </button>
             </div>
           </div>
         </div>

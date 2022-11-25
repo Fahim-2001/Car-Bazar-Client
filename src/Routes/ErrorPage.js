@@ -13,9 +13,9 @@ const ErrorPage = () => {
       <h1 className="text-6xl font-semibold text-primary">
         Sorry Page Not Found
       </h1>
-      <button className="btn btn-outline btn-primary my-10">
-        <Link to="/home">Go back to home</Link>
-      </button>
+      <Link className="btn btn-outline btn-primary my-10" to="/home">
+        Go back to home
+      </Link>
     </div>
   );
 };
