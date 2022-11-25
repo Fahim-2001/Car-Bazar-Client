@@ -5,6 +5,8 @@ import CarDetails from "../Pages/AllCars/CarDetails/CarDetails";
 import Blog from "../Pages/Blog/Blog";
 import SingleCategory from "../Pages/Categories/SingleCatagory/SingleCategory";
 import Home from "../Pages/Home/Home/Home";
+import Login from "../Pages/Login/Login/Login";
+import SignUp from "../Pages/SignUp/SignUp/SignUp";
 import ErrorPage from "./ErrorPage";
 
 const routes = createBrowserRouter([
@@ -40,6 +42,14 @@ const routes = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
     ],
   },
