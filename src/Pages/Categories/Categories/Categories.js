@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   return (
@@ -52,7 +53,9 @@ const Categories = () => {
           </div>
         </div>
       </div>
-      <button className="btn btn-primary mb-20">See All Cars</button>
+      <Link className="btn btn-primary mb-20" to="/cars">
+        See All Cars
+      </Link>
     </div>
   );
 };
