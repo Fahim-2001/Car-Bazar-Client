@@ -18,7 +18,6 @@ const Banner = () => {
             The biggest reconditioned car market in the country. See ,Meet and
             Buy cars from here. Have a car have fun !
           </p>
-          <button className="btn btn-primary">See Cars</button>
         </div>
       </div>
     </div>

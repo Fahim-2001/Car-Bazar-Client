@@ -33,7 +33,7 @@ const Header = () => {
                 <Link to="/sedan">Sedan</Link>
               </li>
               <li>
-                <Link to="/7seater">7 Seater</Link>
+                <Link to="/7seater">SUV</Link>
               </li>
               <li>
                 <Link to="/microbus">Microbus</Link>
