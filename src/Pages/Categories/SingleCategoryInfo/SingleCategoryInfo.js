@@ -1,25 +1,55 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const SingleCategoryInfo = () => {
+const SingleCategoryInfo = ({ category }) => {
+  console.log(category);
   return (
-    <div className="max-w-xs p-6 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
-      <img
-        src="https://source.unsplash.com/random/300x300/?1"
-        alt=""
-        className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
-      />
+    <div className=" p-6 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
+      <div className="flex justify-center">
+        <img
+          src={category.picture}
+          alt=""
+          className="object-cover object-center w-4/5 rounded-md h-full dark:bg-gray-500"
+        />
+      </div>
       <div className="mt-6 mb-2">
         <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-400">
-          Quisque
+          {category.category}
         </span>
-        <h2 className="text-xl font-semibold tracking-wide">
-          Nam maximus purus
+        <h2 className="text-2xl text-primary font-semibold tracking-wide">
+          {category.model}
         </h2>
+        <p className="text-xl">
+          <span className=" font-medium">Original Price:</span>{" "}
+          {category.original_price} BDT
+        </p>
+        <p className="text-xl">
+          <span className=" font-medium">Resale Price:</span>{" "}
+          {category.resale_price} BDT
+        </p>
+        <p className="text-xl">
+          <span className=" font-medium">Milage:</span> {category.travelled}
+        </p>
+        <p className="text-xl">
+          <span className=" font-medium">Used:</span> {category.years_of_use}
+        </p>
+
+        <p className="text-xl">
+          <span className=" font-medium">Seller's Name:</span>{" "}
+          {category.sellers_name}
+        </p>
+        <p className="text-xl">
+          <span className=" font-medium">Seller's Phone Number:</span>{" "}
+          {category.sellers_phone}
+        </p>
+        <p className="text-xl">
+          <span className=" font-medium">Location:</span> {category.location}
+        </p>
+        <p className="text-xl">
+          <span className=" font-medium">Posted On:</span> {category.posted_on}
+        </p>
       </div>
-      <p className="dark:text-gray-100">
-        Mauris et lorem at elit tristique dignissim et ullamcorper elit. In sed
-        feugiat mi. Etiam ut lacinia dui.
-      </p>
+      <Link className="btn btn-primary my-10">Book Now</Link>
     </div>
   );
 };
