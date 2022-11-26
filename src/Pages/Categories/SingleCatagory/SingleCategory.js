@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import BookingModal from "../../BookingModal/BookingModal";
 import SingleCategoryInfo from "../SingleCategoryInfo/SingleCategoryInfo";
 
 const SingleCategory = () => {
   const singleCategory = useLoaderData();
 
+  const [carInfo, setCarInfo] = useState({});
   return (
     <div>
       <h1 className="text-4xl text-primary font-semibold">
@@ -15,8 +17,12 @@ const SingleCategory = () => {
           <SingleCategoryInfo
             key={category._id}
             category={category}
+            setCarInfo={setCarInfo}
           ></SingleCategoryInfo>
         ))}
+      </div>
+      <div>
+        <BookingModal carInfo={carInfo}></BookingModal>
       </div>
     </div>
   );

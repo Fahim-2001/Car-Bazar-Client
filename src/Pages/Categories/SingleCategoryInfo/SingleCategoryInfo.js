@@ -1,7 +1,7 @@
 import React from "react";
 // import BookingModal from "../BookingModal/BookingModal";
 
-const SingleCategoryInfo = ({ category }) => {
+const SingleCategoryInfo = ({ category, setCarInfo }) => {
   return (
     <div className=" p-6 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
       <div className="flex justify-center">
@@ -48,10 +48,13 @@ const SingleCategoryInfo = ({ category }) => {
           <span className=" font-medium">Posted On:</span> {category.posted_on}
         </p>
       </div>
-      <label htmlFor="my-modal-3" className="btn btn-primary my-10">
+      <label
+        htmlFor="booking-modal"
+        className="btn btn-primary my-10"
+        onClick={() => setCarInfo(category)}
+      >
         Book Now
       </label>
-      {/* <BookingModal></BookingModal> */}
     </div>
   );
 };
