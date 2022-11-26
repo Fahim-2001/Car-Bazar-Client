@@ -2,7 +2,6 @@ import React from "react";
 // import BookingModal from "../BookingModal/BookingModal";
 
 const SingleCategoryInfo = ({ category }) => {
-  console.log(category);
   return (
     <div className=" p-6 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
       <div className="flex justify-center">

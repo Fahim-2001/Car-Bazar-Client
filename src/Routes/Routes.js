@@ -8,6 +8,7 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp/SignUp";
 import ErrorPage from "./ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 const routes = createBrowserRouter([
   {
@@ -37,7 +38,11 @@ const routes = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/category/${params.id}`),
 
-        element: <SingleCategory></SingleCategory>,
+        element: (
+          <PrivateRoute>
+            <SingleCategory></SingleCategory>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/blog",

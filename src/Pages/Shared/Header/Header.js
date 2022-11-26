@@ -30,13 +30,13 @@ const Header = () => {
             </Link>
             <ul className="p-2 bg-base-100">
               <li>
-                <Link to="/sedan">Sedan</Link>
+                <Link to="/category/101">Sedan</Link>
               </li>
               <li>
-                <Link to="/7seater">SUV</Link>
+                <Link to="/category/102">SUV</Link>
               </li>
               <li>
-                <Link to="/microbus">Microbus</Link>
+                <Link to="/category/103">Microbus</Link>
               </li>
             </ul>
           </li>
