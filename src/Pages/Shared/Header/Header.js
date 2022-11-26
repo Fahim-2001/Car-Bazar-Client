@@ -1,8 +1,16 @@
-import React from "react";
+import userEvent from "@testing-library/user-event";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((err) => console.log(err));
+  };
   return (
     <div className="navbar bg-base-100 p-5">
       <div className="flex-1">
@@ -44,7 +52,14 @@ const Header = () => {
             <Link to="/blog">Blog</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            {user?.uid ? (
+              <>
+                <Link onClick={handleLogOut}>Logout</Link>
+                <p>{user?.displayName ? user.displayName : "Name Not Found"}</p>
+              </>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
           </li>
         </ul>
       </div>

@@ -21,18 +21,33 @@ const SignUp = () => {
     const fullname = form.fullname.value;
     const email = form.email.value;
     const password = form.password.value;
+    const role = form.role.value;
     const user = {
       fullname,
       email,
-      password,
+      role,
     };
     console.log(user);
-
     creatUser(email, password)
       .then((result) => {
         const user = result.user;
-        updateUserProfile(fullname);
+        updateUserProfile(fullname, role);
         console.log(user);
+      })
+      .catch((err) => console.log(err));
+    fetch(`http://localhost:5000/accounts`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          form.reset();
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -81,6 +96,15 @@ const SignUp = () => {
             className="space-y-8 ng-untouched ng-pristine ng-valid"
           >
             <div className="space-y-4">
+              <select
+                type="role"
+                name="role"
+                id="role"
+                className="select block w-full text-center text-black"
+              >
+                <option defaultValue="User">User</option>
+                <option value="Seller">Seller</option>
+              </select>
               <div className="space-y-2">
                 <label htmlFor="fullname" className="block text-sm text-left">
                   Full Name
