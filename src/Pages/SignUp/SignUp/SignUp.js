@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const SignUp = () => {
-  const { googleSignIn, creatUser, updateUser } = useContext(AuthContext);
+  const { googleSignIn, creatUser, updateUserProfile } =
+    useContext(AuthContext);
   const provider = new GoogleAuthProvider();
   const handleGoogleLogin = () => {
     googleSignIn(provider)
@@ -30,6 +31,7 @@ const SignUp = () => {
     creatUser(email, password)
       .then((result) => {
         const user = result.user;
+        updateUserProfile(fullname);
         console.log(user);
       })
       .catch((err) => console.log(err));

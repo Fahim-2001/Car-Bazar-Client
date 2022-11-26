@@ -6,7 +6,7 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   signOut,
-  updateCurrentUser,
+  updateProfile,
 } from "firebase/auth";
 import app from "../../Firbase/firebase.config";
 
@@ -40,8 +40,15 @@ const AuthProvider = ({ children }) => {
   };
 
   //Update Profile
-  const updateUser = (name) => {
-    updateCurrentUser(auth, { displayName: name });
+  // Update profile
+  const updateUserProfile = (name) => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+    })
+      .then(() => {
+        console.log("Profile updated!");
+      })
+      .catch((error) => console.error(error));
   };
 
   // Observer
@@ -64,7 +71,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     googleSignIn,
-    updateUser,
+    updateUserProfile,
   };
   return (
     <div>

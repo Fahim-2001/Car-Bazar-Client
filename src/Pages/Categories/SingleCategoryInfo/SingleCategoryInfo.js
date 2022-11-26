@@ -1,5 +1,5 @@
 import React from "react";
-import BookingModal from "../BookingModal/BookingModal";
+// import BookingModal from "../BookingModal/BookingModal";
 
 const SingleCategoryInfo = ({ category }) => {
   console.log(category);
