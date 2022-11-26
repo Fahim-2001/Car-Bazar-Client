@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const BookingModal = ({ carInfo }) => {
   const { user } = useContext(AuthContext);
@@ -32,6 +33,10 @@ const BookingModal = ({ carInfo }) => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
+          toast.success("Booking Confirmed", {
+            position: "top-center",
+            autoClose: 800,
+          });
           form.reset();
         }
       })
