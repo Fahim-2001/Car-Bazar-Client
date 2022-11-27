@@ -1,4 +1,3 @@
-import userEvent from "@testing-library/user-event";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
@@ -11,57 +10,83 @@ const Header = () => {
       .then()
       .catch((err) => console.log(err));
   };
-  return (
-    <div className="navbar bg-base-100 p-5">
-      <div className="flex-1">
-        <Link to="/home" className="btn btn-ghost normal-case text-xl">
-          <img src={logo} alt="Logo" style={{ width: "100px" }} />
+  const menuItems = (
+    <>
+      <li>
+        <Link to="/home">Home</Link>
+      </li>
+      <li tabIndex={0}>
+        <Link>
+          Categories
+          <svg
+            className="fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+          >
+            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+          </svg>
         </Link>
-      </div>
-      <div className="flex-none">
-        <ul className="menu menu-horizontal p-0">
+        <ul className="p-2 bg-base-100">
           <li>
-            <Link to="/home">Home</Link>
-          </li>
-          <li tabIndex={0}>
-            <Link>
-              Categories
-              <svg
-                className="fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-              </svg>
-            </Link>
-            <ul className="p-2 bg-base-100">
-              <li>
-                <Link to="/category/101">Sedan</Link>
-              </li>
-              <li>
-                <Link to="/category/102">SUV</Link>
-              </li>
-              <li>
-                <Link to="/category/103">Microbus</Link>
-              </li>
-            </ul>
+            <Link to="/category/101">Sedan</Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/category/102">SUV</Link>
           </li>
           <li>
-            {user?.uid ? (
-              <>
-                <Link onClick={handleLogOut}>Logout</Link>
-                <p>{user?.displayName ? user.displayName : "Name Not Found"}</p>
-              </>
-            ) : (
-              <Link to="/login">Login</Link>
-            )}
+            <Link to="/category/103">Microbus</Link>
           </li>
         </ul>
+      </li>
+      <li>
+        <Link to="/blog">Blog</Link>
+      </li>
+      <li>
+        {user?.uid ? (
+          <>
+            <Link onClick={handleLogOut}>Logout</Link>
+            <p>{user?.displayName ? user.displayName : "Name Not Found"}</p>
+          </>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
+      </li>
+    </>
+  );
+  return (
+    <div className="navbar bg-base-100 px-10">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <label tabIndex={0} className="btn btn-ghost btn-circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            {menuItems}
+          </ul>
+        </div>
+      </div>
+      <div className="navbar-end">
+        <Link className="normal-case text-2xl font-bold font-mono" to="/">
+          <img src={logo} alt="" style={{ width: "100px" }} />
+        </Link>
       </div>
     </div>
   );

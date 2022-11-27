@@ -102,7 +102,7 @@ const SignUp = () => {
                 id="role"
                 className="select block w-full text-center text-black"
               >
-                <option defaultValue="User">User</option>
+                <option defaultValue="Buyer">Buyer</option>
                 <option value="Seller">Seller</option>
               </select>
               <div className="space-y-2">
