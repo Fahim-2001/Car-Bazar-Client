@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 
 const AllUsers = () => {
-  const url = `http://localhost:5000/accounts`;
+  const url = `https://resale-shop-server-side.vercel.app/accounts`;
 
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
@@ -14,7 +14,7 @@ const AllUsers = () => {
     },
   });
   const handleMakeAdmin = (_id) => {
-    fetch(`http://localhost:5000/accounts/admin/${_id}`, {
+    fetch(`https://resale-shop-server-side.vercel.app/accounts/admin/${_id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

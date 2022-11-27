@@ -35,13 +35,15 @@ const routes = createBrowserRouter([
       {
         path: "/cars/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/cars/${params.id}`),
+          fetch(`https://resale-shop-server-side.vercel.app/cars/${params.id}`),
         element: <CarDetails></CarDetails>,
       },
       {
         path: "/category/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(
+            `https://resale-shop-server-side.vercel.app/category/${params.id}`
+          ),
 
         element: (
           <PrivateRoute>

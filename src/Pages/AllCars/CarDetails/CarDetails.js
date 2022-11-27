@@ -63,7 +63,6 @@ const CarDetails = () => {
           </p>
         </div>
       </div>
-      <Link className="btn btn-primary mb-20">Book Now</Link>
     </div>
   );
 };

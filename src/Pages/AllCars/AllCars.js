@@ -6,7 +6,9 @@ const AllCars = () => {
   const { data: cars = [] } = useQuery({
     queryKey: ["cars"],
     queryFn: async () => {
-      const data = await (await fetch(`http://localhost:5000/cars`)).json();
+      const data = await (
+        await fetch(`https://resale-shop-server-side.vercel.app/cars`)
+      ).json();
       return data;
     },
   });

@@ -35,7 +35,7 @@ const SignUp = () => {
         console.log(user);
       })
       .catch((err) => console.log(err));
-    fetch(`http://localhost:5000/accounts`, {
+    fetch(`https://resale-shop-server-side.vercel.app/accounts`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

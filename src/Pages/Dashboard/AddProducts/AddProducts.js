@@ -32,7 +32,7 @@ const AddProducts = () => {
     };
 
     console.log(product);
-    fetch(`http://localhost:5000/myproducts`, {
+    fetch(`https://resale-shop-server-side.vercel.app/myproducts`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
