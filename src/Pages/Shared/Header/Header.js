@@ -46,6 +46,7 @@ const Header = () => {
       <li>
         {user?.uid ? (
           <>
+            <Link to="/dashboard">Dashboard</Link>
             <Link onClick={handleLogOut}>Logout</Link>
             <p>{user?.displayName ? user.displayName : "Name Not Found"}</p>
           </>
