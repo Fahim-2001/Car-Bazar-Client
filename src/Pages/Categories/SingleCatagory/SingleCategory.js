@@ -5,7 +5,6 @@ import SingleCategoryInfo from "../SingleCategoryInfo/SingleCategoryInfo";
 
 const SingleCategory = () => {
   const singleCategory = useLoaderData();
-
   const [carInfo, setCarInfo] = useState({});
   return (
     <div>
