@@ -8,7 +8,7 @@ import AddProducts from "../Pages/Dashboard/AddProducts/AddProducts";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import DashboardLayout from "../Pages/Dashboard/DashboardLayout/DashboardLayout";
 import MyOrders from "../Pages/Dashboard/MyOrders/MyOrders";
-import MyProducts from "../Pages/Dashboard/MyProducts/MyProducts";
+
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp/SignUp";
@@ -98,18 +98,6 @@ const routes = createBrowserRouter([
       {
         path: "/dashboard/addproducts",
         element: <AddProducts></AddProducts>,
-      },
-      {
-        path: "/dashboard/myproducts",
-        element: (
-          <AdminRoute>
-            <MyProducts></MyProducts>
-          </AdminRoute>
-        ),
-      },
-      {
-        path: "/dashboard/myproducts",
-        element: <MyProducts></MyProducts>,
       },
     ],
   },
