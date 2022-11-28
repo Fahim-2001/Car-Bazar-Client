@@ -1,11 +1,12 @@
 import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const SignUp = () => {
   const { googleSignIn, creatUser, updateUserProfile } =
     useContext(AuthContext);
+  const navigate = useNavigate();
   const provider = new GoogleAuthProvider();
   const handleGoogleLogin = () => {
     googleSignIn(provider)
@@ -46,6 +47,7 @@ const SignUp = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
+          navigate("/home");
           form.reset();
         }
       })

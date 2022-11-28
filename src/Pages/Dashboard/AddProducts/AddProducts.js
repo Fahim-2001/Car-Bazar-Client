@@ -43,7 +43,7 @@ const AddProducts = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          toast.success("Booking Confirmed", {
+          toast.success("Product Added", {
             position: "top-center",
             autoClose: 800,
           });
