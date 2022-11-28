@@ -5,7 +5,7 @@ reconditioned car online market.
 
 ## Live Link
 
-Hosted in Netlify -> [Goriber Seller](https://resale-shop-b1967.web.app/)
+Hosted in Firebase -> [Car Bazar](https://resale-shop-b1967.web.app/)
 
 ## Dashboard
 
